@@ -28,3 +28,9 @@ reflex v0.8.20
 watchfiles v1.1.1
 └── anyio v4.11.0
 ```
+
+# gotchas
+- The app directory name must start wiht a letter and can contain letters, numbers, and underscores.
+- `reflex init --template reflex-chat` 
+    - No template know for version 0.8.20
+    - Please use `reflex login` to access the `reflex-chat' template
