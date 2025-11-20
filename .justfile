@@ -6,3 +6,8 @@ default:
 [no-cd]
 @init:
     uv run reflex init
+
+# Reflex run
+[no-cd]
+@run:
+    uv run reflex run
