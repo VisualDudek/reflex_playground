@@ -9,12 +9,20 @@ class State(rx.State):
     """The app state."""
 
 
+def base_page(*args, **kwargs) -> rx.Component:
+    print([type(arg) for arg in args])
+    return rx.container(
+        *args, # unpack components
+    )
+
+
 def index() -> rx.Component:
     # Welcome Page (Index)
-    return rx.container(
+    # return rx.container( <-### Original code
+    return base_page(
         rx.color_mode.button(position="top-right"),
         rx.vstack(
-            rx.heading("Welcome to Reflex!", size="9"),
+            rx.heading("Building a Custom Reflex Component", size="9"),
             rx.text(
                 "Get started by editing ",
                 rx.code(f"{config.app_name}/{config.app_name}.py"),
