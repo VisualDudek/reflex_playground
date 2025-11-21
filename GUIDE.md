@@ -1,3 +1,8 @@
+# Guide
+
+Mental setup
+- you are building your frontent using Components what are renderd out to HTML
+
 ## Creating a New Reflex App
 
 ### Basic Initialization
