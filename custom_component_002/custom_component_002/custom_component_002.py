@@ -11,6 +11,12 @@ class State(rx.State):
 
 def base_page(*args, **kwargs) -> rx.Component:
     print([type(arg) for arg in args])
+
+    # Validate that all args are rx.Components
+    for child in args:
+        if not isinstance(child, rx.Component):
+            raise TypeError(f"Expected rx.Component, got {type(child)}")
+
     return rx.container(
         *args, # unpack components
     )

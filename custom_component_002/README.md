@@ -19,6 +19,7 @@ def base_page(*args, **kwargs) -> rx.Component:
 ```txt
 [<class 'reflex.components.radix.themes.components.icon_button.IconButton'>, <class 'reflex.components.radix.themes.layout.stack.VStack'>]
 ```
+- you can validate if all args are `rx.Component`
 
 ## Why Create Custom Container Components?
 
