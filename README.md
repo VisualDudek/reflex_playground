@@ -9,9 +9,8 @@ See [GUIDE.md](GUIDE.md) for detailed tutorial.
 This project uses [just](https://github.com/casey/just) for task automation.
 
 Common commands:
-- `just install` - Install dependencies
-- `just run` - Run the development server
-- `just init <app_name>` - Initialize a new Reflex app
+- `just run` - Run the development server with hot reaload
+- `just init` - Initialize a new Reflex app under current dir
 
 # src
 [YT Build Full Stack Web Apps in Pure Python with Reflex](https://youtu.be/ITOZkzjtjUA?si=L1_LLilP5YhxL2VU)
