@@ -22,6 +22,23 @@
 - Does `rx.text` also have `on_click`? YES
 - try `on_click` on `rx.text`
 
+## Props
+- Attributes that affect the behavior and appearance of component.
+- React naming convention for component inputs (properties). Reflex uses it because the Python code compiles to React components.
+```python
+# component.py:1032
+@classmethod
+def create(cls: type[T], *children, **props) -> T:
+    # props = {"on_click": State.do_something}
+```
+- `_post_init()` processes the props:
+```python
+# component.py:744-747
+fields = self.get_fields() # Class field definitions (Var types)
+component_specific_triggers = self.get_event_triggers()  # {"on_click": pointer_event_spec, ...}
+props = self.get_props() # Valid prop names for this component
+```
+
 # Questions
 - what are `.web` and `.state` dirs?
 - `on_click` is Button kwarg but plays Event role?
