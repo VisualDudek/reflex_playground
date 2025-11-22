@@ -15,3 +15,7 @@ default:
 # Find markdown files
 @findmd:
     uv run find_markdown.py
+
+# Recursive search in mf-files for Takeaway kword
+@take:
+    grep -r -A 1 -i -n --include="*.md" --color=always "TAKEAWAY" .
