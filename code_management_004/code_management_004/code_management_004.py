@@ -9,9 +9,19 @@ class State(rx.State):
     """The app state."""
 
 
+def base_layout(*children: rx.Component) -> rx.Component:
+    """The base layout for the app."""
+    return rx.container(
+        *children,
+        padding="1rem",
+        max_width="800px",
+        margin="0 auto",
+    )
+
+
 def index() -> rx.Component:
     # Welcome Page (Index)
-    return rx.container(
+    return base_layout(
         rx.color_mode.button(position="top-right"),
         rx.vstack(
             rx.heading("Welcome to Reflex!", size="9"),
