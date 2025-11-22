@@ -19,9 +19,13 @@ def index() -> rx.Component:
                 "Get started by editing ",
                 rx.code(f"{config.app_name}/{config.app_name}.py"),
                 size="5",
+                id="my-text",
             ),
             rx.link(
-                rx.button("Check out our docs!"),
+                rx.button(
+                    "Check out our docs!", 
+                    id="my-button",
+                ),
                 href="https://reflex.dev/docs/getting-started/introduction/",
                 is_external=True,
             ),
