@@ -40,6 +40,8 @@ watchfiles v1.1.1
 
 # Future plans
 - Enhance the `find_markdown.py` script
+- Use Markdown comment syntax `<!-- TAG: TAKEAWAY --->` for takaway points
+- ^^^ follow up, script that walk all .md files and gather TAKEAWAY tags
 
 ## Python Tips
 
