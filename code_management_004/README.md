@@ -7,3 +7,4 @@ When building Reflex apps, keep your code organized by splitting it into separat
 - Break code into smaller files. `./ui`:
     - `navbar.py`
     - `base_page.py`
+    - use "Relative import" `from . import module_name`
