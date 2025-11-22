@@ -41,6 +41,22 @@ watchfiles v1.1.1
 # Future plans
 - Enhance the `find_markdown.py` script
 
+## Python Tips
+
+### Modifying Lists During `os.walk()` Traversal
+When using `os.walk()`, the `dirnames` list can be modified in-place to control which directories are visited:
+
+```python
+for dirpath, dirnames, filenames in os.walk(root):
+    # ✅ Correct: Modifies the actual list os.walk() uses
+    dirnames[:] = [d for d in dirnames if d not in exclude_dirs]
+
+    # ❌ Wrong: Creates new list, os.walk() doesn't see changes
+    dirnames = [d for d in dirnames if d not in exclude_dirs]
+```
+
+The slice assignment `[:]` modifies the **same list object** that `os.walk()` references, allowing you to prune entire directory trees during traversal. This is much more efficient than traversing everything and filtering later.
+
 # gotchas
 - The app directory name must start wiht a letter and can contain letters, numbers, and underscores.
 - `reflex init --template reflex-chat` 
