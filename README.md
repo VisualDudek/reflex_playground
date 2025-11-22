@@ -64,3 +64,9 @@ The slice assignment `[:]` modifies the **same list object** that `os.walk()` re
 - `reflex init --template reflex-chat` 
     - No template know for version 0.8.20
     - Please use `reflex login` to access the `reflex-chat' template
+
+# Takeaway
+vim-mode when using fold on code block: Use `gj` and `gk` instead of `j` and `k`
+They move visually, not logically — this does not enter folds, so they stay closed.
+
+Jump to next / previous paragraph: Use `{` and `}`. A paragraph is separated by blank lines.
