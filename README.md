@@ -38,6 +38,9 @@ watchfiles v1.1.1
 └── anyio v4.11.0
 ```
 
+# Future plans
+- Enhance the `find_markdown.py` script
+
 # gotchas
 - The app directory name must start wiht a letter and can contain letters, numbers, and underscores.
 - `reflex init --template reflex-chat` 

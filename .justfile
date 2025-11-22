@@ -11,3 +11,7 @@ default:
 [no-cd]
 @run:
     uv run reflex run
+
+# Find markdown files
+@findmd:
+    uv run find_markdown.py
