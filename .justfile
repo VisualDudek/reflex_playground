@@ -19,3 +19,11 @@ default:
 # Recursive search in mf-files for Takeaway kword
 @take:
     grep -r -A 1 -i -n --include="*.md" --color=always "TAKEAWAY" .
+
+# Check for outdated dependencies, dry run
+@outdated:
+    uv lock --dry-run -U
+
+# Display the dependency tree, depth 1
+@dep_tree:
+    uv pip tree -d 1
