@@ -3,20 +3,11 @@
 import reflex as rx
 
 from rxconfig import config
+from .ui.base_layout import base_layout
 
 
 class State(rx.State):
     """The app state."""
-
-
-def base_layout(*children: rx.Component) -> rx.Component:
-    """The base layout for the app."""
-    return rx.container(
-        *children,
-        padding="1rem",
-        max_width="800px",
-        margin="0 auto",
-    )
 
 
 def index() -> rx.Component:
