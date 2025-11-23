@@ -33,3 +33,28 @@ app.add_page(about_page, route='/about')`
 - keep project structure:
     - `/ui`
     - `/pages`
+
+TAKEAWAY: instead of importing each new page from module
+```python
+from .pages.about import about_page
+from .pages.index import index
+```
+make `/pages` a package -> add `__init__.py` with dunder `__all__`
+```python
+from .about import about_page
+from .index import index
+
+__all__ = [
+    "about_page", 
+    "index",
+    ]
+```
+than you can:
+```python
+from . import pages
+```
+and
+```python
+app.add_page(pages.index)
+app.add_page(pages.about_page, route="/about")
+```

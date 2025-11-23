@@ -3,14 +3,12 @@
 import reflex as rx
 
 from rxconfig import config
-from .pages.about import about_page
-from .pages.index import index
-from .ui.base_layout import base_layout
+from . import pages
 
 
 class State(rx.State):
     """The app state."""
 
 app = rx.App()
-app.add_page(index)
-app.add_page(about_page, route="/about")
+app.add_page(pages.index)
+app.add_page(pages.about_page, route="/about")
