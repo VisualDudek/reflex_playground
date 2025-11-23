@@ -72,3 +72,12 @@ Takeaway: mindsetup -> insted of link use event on_click + `rx.redirect()` (prog
 BUT programmatic approach wont give you e.g. copy url link on Button so in those simple usage stick to button inside link
 
 - use decorator `rx.page(route='')` to register pages instead of `app.add_page(pages.about_page, route="/about")`
+
+# URL Route Path Constatnts
+solving typos in url redirections in many places, "one source of truth"
+
+- create navigation package `/navigation/routes.py`
+- use on above package same trick with `__all__` dunder 
+
+# Navigation State
+

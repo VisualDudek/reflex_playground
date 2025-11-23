@@ -2,8 +2,7 @@
 
 import reflex as rx
 
-from rxconfig import config
-from . import pages
+from . import pages, navigation
 
 
 class State(rx.State):
@@ -14,6 +13,7 @@ class State(rx.State):
         return rx.redirect("/about")
 
 app = rx.App()
-app.add_page(pages.index)
+app.add_page(pages.index, route=navigation.routes.HOME_ROUTE)
 # app.add_page(pages.about_page, route="/about")
 # insead of the above line, use decorator on the about_page function
+app.add_page(pages.pricing_page, route=navigation.routes.PRICING_ROUTE)
