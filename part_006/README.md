@@ -24,3 +24,12 @@ def index() -> rx.Component:
 ```
 
 # Pages and URL Routes
+
+- now adding new pages is easy, just copy `index()` and add routing
+```python
+app.add_page(about_page, route='/about')`
+```
+- and edit link in navbar
+- keep project structure:
+    - `/ui`
+    - `/pages`
