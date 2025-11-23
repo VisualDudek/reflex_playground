@@ -1,6 +1,8 @@
 import reflex as rx
 from ..ui.base_layout import base_layout
 
+
+@rx.page(route="/about")
 def about_page() -> rx.Component:
     my_child = rx.vstack(
         rx.heading("About Page", size="9"),

@@ -64,6 +64,7 @@ The slice assignment `[:]` modifies the **same list object** that `os.walk()` re
 - `reflex init --template reflex-chat` 
     - No template know for version 0.8.20
     - Please use `reflex login` to access the `reflex-chat' template
+- `ImportError: cannot import name 'State' from partially initialized module 'part_006.part_006' (most likely due to a circular import)`
 
 # Takeaway
 vim-mode when using fold on code block: Use `gj` and `gk` instead of `j` and `k`

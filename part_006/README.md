@@ -58,3 +58,17 @@ and
 app.add_page(pages.index)
 app.add_page(pages.about_page, route="/about")
 ```
+
+# USing Link-based Navigation
+
+- using `rx.link()` make logo to point into home page
+- use `navbar_link` inside `navbar_buttons()` to create href
+- it won't work for `rx.mobile_and_tablet()`
+
+# Click Events and Reflex Redirect
+
+Takeaway: mindsetup -> insted of link use event on_click + `rx.redirect()` (programmatic approach)
+
+BUT programmatic approach wont give you e.g. copy url link on Button so in those simple usage stick to button inside link
+
+- use decorator `rx.page(route='')` to register pages instead of `app.add_page(pages.about_page, route="/about")`

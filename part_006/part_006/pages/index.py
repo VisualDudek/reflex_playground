@@ -2,6 +2,12 @@ import reflex as rx
 from rxconfig import config
 from ..ui.base_layout import base_layout
 
+class State(rx.State):
+
+    def redirect_to_about(self):
+        """Redirect to the about page."""
+        return rx.redirect("/about")
+    
 
 def index() -> rx.Component:
     my_child = rx.vstack(
@@ -19,6 +25,7 @@ def index() -> rx.Component:
             href="https://reflex.dev/docs/getting-started/introduction/",
             is_external=True,
         ),
+        rx.button("Event with redirect", on_click=State.redirect_to_about),
         spacing="5",
         justify="center",
         align="center",
