@@ -80,32 +80,41 @@ def navbar_buttons() -> rx.Component:
 
 
 def base_layout(*children: rx.Component) -> rx.Component:
-    return rx.container(
+    return rx.fragment(
         navbar_buttons(),
-        *children,
+        rx.color_mode.button(position="bottom-left"),
+        rx.box(
+            *children,
+            id="my-content-box",
+            padding="1em",
+            width="100%",
+        ),
     )
 
 
 def index() -> rx.Component:
-    return base_layout(
-        rx.color_mode.button(position="top-right"),
-        rx.vstack(
-            rx.heading("Welcome to Reflex!", size="9"),
-            rx.text(
-                "Get started by editing ",
-                rx.code(f"{config.app_name}/{config.app_name}.py"),
-                size="5",
-            ),
-            rx.link(
-                rx.button("Check out our docs!"),
-                href="https://reflex.dev/docs/getting-started/introduction/",
-                is_external=True,
-            ),
-            spacing="5",
-            justify="center",
-            min_height="85vh",
+    my_child = rx.vstack(
+        rx.heading("Welcome to Reflex!", size="9"),
+        rx.text(
+            "Get started by editing ",
+            rx.code(f"{config.app_name}/{config.app_name}.py"),
+            size="5",
         ),
+        rx.input(
+            placeholder="Type something...",
+        ),
+        rx.link(
+            rx.button("Check out our docs!"),
+            href="https://reflex.dev/docs/getting-started/introduction/",
+            is_external=True,
+        ),
+        spacing="5",
+        justify="center",
+        align="center",
+        min_height="85vh",
+        id="welcome-vstack",
     )
+    return base_layout(my_child,)
 
 
 app = rx.App()
