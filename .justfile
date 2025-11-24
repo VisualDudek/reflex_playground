@@ -43,3 +43,7 @@ default:
 dbmakeall:
     uv run reflex db makemigrations
     uv run reflex db migrate
+
+# Concat all markdown files into READMEALL.md
+@concatallmd:
+    uv run concat_markdown.py
