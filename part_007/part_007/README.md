@@ -9,3 +9,11 @@
     - add `tx.text_area`
     - make name required
     - add email wiht type email, default is text
+
+# Making the From Responsive
+- styling wiht common Inline Styles
+- use `rx.desktop_only()` for rendring Components only in destop mode
+- use `rx.box()` Component for styling
+- Takeaway: 50vw stands for 50% "viewport width" -> 50% of the browser windows's width
+- make name and last name in same row
+

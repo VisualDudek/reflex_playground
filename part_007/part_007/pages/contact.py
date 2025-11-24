@@ -16,20 +16,32 @@ class ContactFormState(rx.State):
 def contact_page() -> rx.Component:
     my_form = rx.form(
         rx.vstack(
-            rx.input(
-                placeholder="First Name", 
-                name="first_name", 
-                required=True),
-            rx.input(
-                placeholder="Last Name", 
-                name="last_name"),
+            rx.hstack(
+                rx.input(
+                    placeholder="First Name", 
+                    name="first_name", 
+                    required=True,
+                    width="100%",
+                ),
+                rx.input(
+                    placeholder="Last Name", 
+                    name="last_name",
+                    width="100%",
+                ),
+                spacing="3",
+                width="100%",
+            ),
             rx.input(
                 name="email", 
                 placeholder="Email", 
-                type="email",),
+                type="email",
+                width="100%",
+            ),
             rx.text_area(
                 placeholder="Your Message", 
-                name="message"),
+                name="message",
+                width="100%",
+            ),
             rx.button("Submit", type="submit"),
         ),
         on_submit=ContactFormState.handle_submit,
@@ -37,7 +49,12 @@ def contact_page() -> rx.Component:
     ),
     my_child = rx.vstack(
         rx.heading("Contact Page", size="9"),
-        my_form,
+        rx.desktop_only(
+            rx.box(
+                my_form,
+                width="50vw",
+            ),
+        ),
         spacing="5",
         justify="center",
         align="center",
