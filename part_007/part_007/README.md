@@ -6,3 +6,6 @@
     - use `navigation routes`
     - do not forget add links in navbar
 - use docs form recipe
+    - add `tx.text_area`
+    - make name required
+    - add email wiht type email, default is text
