@@ -8,12 +8,20 @@
 - use docs form recipe
     - add `tx.text_area`
     - make name required
-    - add email wiht type email, default is text
+    - add email with type email, default is text
 
-# Making the From Responsive
-- styling wiht common Inline Styles
-- use `rx.desktop_only()` for rendring Components only in destop mode
+# Making the From Responsive (styling)
+- styling with common Inline Styles
+- use `rx.desktop_only()` for rendering Components only in desktop mode
 - use `rx.box()` Component for styling
 - Takeaway: 50vw stands for 50% "viewport width" -> 50% of the browser windows's width
 - make name and last name in same row
 
+# Conditional Rendering in Reflex
+getting familiar with:
+- `rx.cond()` keep in mind that both Components need to be the same type
+- `@rx.var`
+
+- use FormState to keep bool for rx.cond
+- challenge with clearing thank_you_message rendered by `rx.cond`
+    - timeout approach 

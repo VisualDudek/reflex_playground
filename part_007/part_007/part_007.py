@@ -13,5 +13,5 @@ class State(rx.State):
 app = rx.App()
 app.add_page(pages.index, route=navigation.routes.HOME_ROUTE)
 # app.add_page(pages.about_page, route="/about")
-# insead of the above line, use decorator on the about_page function
+# instead of the above line, use decorator on the about_page function
 app.add_page(pages.pricing_page, route=navigation.routes.PRICING_ROUTE)

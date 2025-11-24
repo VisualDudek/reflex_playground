@@ -5,11 +5,17 @@ from ..navigation import routes
 
 class ContactFormState(rx.State):
     form_data: dict = {}
+    did_submit: bool = False
 
     def handle_submit(self, form_data: dict):
         """Handle the form submit."""
         print("Form submitted:", form_data) # For debugging
         self.form_data = form_data
+        self.did_submit = True
+    
+    @rx.var
+    def thank_you_message(self) -> str:
+        return f"Thank you, {self.form_data.get('first_name', 'Guest')}! We have received your message."
 
 
 @rx.page(route=routes.CONTACT_ROUTE)  # route decorator alternative to app.add_page
@@ -49,6 +55,10 @@ def contact_page() -> rx.Component:
     ),
     my_child = rx.vstack(
         rx.heading("Contact Page", size="9"),
+        rx.cond(
+            ContactFormState.did_submit, 
+            rx.text(ContactFormState.thank_you_message), 
+            None),  # Placeholder for submission confirmation
         rx.desktop_only(
             rx.box(
                 my_form,
