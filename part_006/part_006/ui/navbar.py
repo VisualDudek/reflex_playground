@@ -1,5 +1,6 @@
 import reflex as rx
 from .. import navigation
+from ..navigation import NavState
 
 def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(rx.text(text, size="4", weight="medium"), href=url)
@@ -51,9 +52,9 @@ def navbar_buttons() -> rx.Component:
                 rx.menu.root(
                     rx.menu.trigger(rx.icon("menu", size=30)),
                     rx.menu.content(
-                        rx.menu.item("Home"),
-                        rx.menu.item("About"),
-                        rx.menu.item("Pricing"),
+                        rx.menu.item("Home", on_click=NavState.to_home),
+                        rx.menu.item("About", on_click=NavState.to_about),
+                        rx.menu.item("Pricing", on_click=NavState.to_pricing),
                         rx.menu.item("Contact"),
                         rx.menu.separator(),
                         rx.menu.item("Log in"),

@@ -74,10 +74,14 @@ BUT programmatic approach wont give you e.g. copy url link on Button so in those
 - use decorator `rx.page(route='')` to register pages instead of `app.add_page(pages.about_page, route="/about")`
 
 # URL Route Path Constatnts
-solving typos in url redirections in many places, "one source of truth"
+solving typos issues in hardcoded url redirections in many places, "one source of truth"
 
 - create navigation package `/navigation/routes.py`
 - use on above package same trick with `__all__` dunder 
 
 # Navigation State
+solving on_click event redirect State usecase: mobile navbar -> `rx.menu.item("About")`
 
+- create `/navigation/state.py`
+- add redirext methods to `NavState` class
+- edit `__init__` for navigation pkg in order to make  
