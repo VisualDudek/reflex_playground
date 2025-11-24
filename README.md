@@ -43,6 +43,13 @@ watchfiles v1.1.1
 - Use Markdown comment syntax `<!-- TAG: TAKEAWAY --->` for takaway points
 - ^^^ follow up, script that walk all .md files and gather TAKEAWAY tags
 
+## Debug
+For `rx.page()` decorator, there is this key line:
+```python
+        DECORATED_PAGES[get_config().app_name].append((render_fn, kwargs))
+```
+how to debug this dict DECORATED_PAGES?
+
 ## Python Tips
 
 ### Modifying Lists During `os.walk()` Traversal
