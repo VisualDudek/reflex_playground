@@ -1,6 +1,8 @@
 # reflex_playground
 Learn reflex framework, build web app using pure Python.
 
+> **Note:** All markdown files in this workspace are concatenated in [READMEALL.md](READMEALL.md)
+
 - try to use Claude CLI + VS Code extension
 
 ## Quick Start
