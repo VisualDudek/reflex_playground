@@ -25,3 +25,15 @@ getting familiar with:
 - use FormState to keep bool for rx.cond
 - challenge with clearing thank_you_message rendered by `rx.cond`
     - timeout approach 
+
+# Refresh State with Python Asyncio Timeouts
+Takeaway: using yield for async method for refreshing state?
+
+- kind of magic:
+```python
+        yield
+        await asyncio.sleep(2) 
+        self.did_submit = False
+        yield
+```
+

@@ -1,4 +1,5 @@
 import reflex as rx
+import asyncio
 from ..ui.base_layout import base_layout
 from ..navigation import routes
 
@@ -7,11 +8,15 @@ class ContactFormState(rx.State):
     form_data: dict = {}
     did_submit: bool = False
 
-    def handle_submit(self, form_data: dict):
+    async def handle_submit(self, form_data: dict):
         """Handle the form submit."""
         print("Form submitted:", form_data) # For debugging
         self.form_data = form_data
         self.did_submit = True
+        yield
+        await asyncio.sleep(2) 
+        self.did_submit = False
+        yield
     
     @rx.var
     def thank_you_message(self) -> str:
