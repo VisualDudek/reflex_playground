@@ -27,3 +27,8 @@ default:
 # Display the dependency tree, depth 1
 @dep_tree:
     uv pip tree -d 1
+
+# Clean pyc files
+[no-cd]
+@clean_pyc:
+    find . -name "*.pyc" -delete

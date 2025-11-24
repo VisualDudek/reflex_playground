@@ -43,6 +43,16 @@ just run
 
 This starts both frontend and backend servers. The app will be available at `http://localhost:3000` by default.
 
+### Copying Existing Projects
+
+When copying an old project into a newly initialized Reflex app, **delete all `*.pyc` files** to avoid potential conflicts:
+
+```bash
+find . -name "*.pyc" -delete
+```
+
+This removes cached Python bytecode files that may cause issues with the new environment.
+
 ## Built-in Features
 
 **Light/Dark Mode:** Reflex apps come with light/dark mode support out of the box. No additional configuration required.
