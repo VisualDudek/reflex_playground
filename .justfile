@@ -32,3 +32,8 @@ default:
 [no-cd]
 @clean_pyc:
     find . -name "*.pyc" -delete
+
+# Reflex db init
+[no-cd]
+@db_init:
+    uv run reflex db init

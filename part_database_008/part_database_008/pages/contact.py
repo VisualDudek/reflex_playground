@@ -4,6 +4,13 @@ from ..ui.base_layout import base_layout
 from ..navigation import routes
 
 
+class ContactEntryModel(rx.Model):
+    first_name: str
+    last_name: str
+    email: str
+    message: str
+
+
 class ContactFormState(rx.State):
     form_data: dict = {}
     did_submit: bool = False
