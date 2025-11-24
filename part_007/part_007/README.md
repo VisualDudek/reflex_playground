@@ -20,14 +20,14 @@
 # Conditional Rendering in Reflex
 getting familiar with:
 - `rx.cond()` keep in mind that both Components need to be the same type
-- `@rx.var`
+- `@rx.var` Takeaway: rx is using `@overload` for this decorator
 
 - use FormState to keep bool for rx.cond
 - challenge with clearing thank_you_message rendered by `rx.cond`
     - timeout approach 
 
 # Refresh State with Python Asyncio Timeouts
-Takeaway: using yield for async method for refreshing state?
+Takeaway: using `yield` for async method for refreshing state?
 
 - kind of magic:
 ```python
@@ -37,3 +37,9 @@ Takeaway: using yield for async method for refreshing state?
         yield
 ```
 
+# Counting with Asyncio and Reflex
+how to start async countdown fn.? -> use `on_load` for `rx.page()` 
+
+- add rx.var time_left inside ContactFormState class
+- add async countdown
+- start countdown async fn. on load

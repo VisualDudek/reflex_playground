@@ -7,6 +7,7 @@ from ..navigation import routes
 class ContactFormState(rx.State):
     form_data: dict = {}
     did_submit: bool = False
+    time_left: int = 5
 
     async def handle_submit(self, form_data: dict):
         """Handle the form submit."""
@@ -21,9 +22,24 @@ class ContactFormState(rx.State):
     @rx.var
     def thank_you_message(self) -> str:
         return f"Thank you, {self.form_data.get('first_name', 'Guest')}! We have received your message."
+    
+    @rx.var
+    def time_left_label(self) -> str:
+        if self.time_left < 1:
+            return "Time's up!"
+        return f"Left: {self.time_left} seconds"
+    
+    async def countdown(self):
+        while self.time_left > 0:
+            await asyncio.sleep(1)
+            self.time_left -= 1
+            yield
 
 
-@rx.page(route=routes.CONTACT_ROUTE)  # route decorator alternative to app.add_page
+@rx.page(
+        on_load=ContactFormState.countdown,
+        route=routes.CONTACT_ROUTE,
+)  # route decorator alternative to app.add_page
 def contact_page() -> rx.Component:
     my_form = rx.form(
         rx.vstack(
@@ -60,6 +76,9 @@ def contact_page() -> rx.Component:
     ),
     my_child = rx.vstack(
         rx.heading("Contact Page", size="9"),
+        rx.text(
+            ContactFormState.time_left_label,
+        ),
         rx.cond(
             ContactFormState.did_submit, 
             rx.text(ContactFormState.thank_you_message), 
