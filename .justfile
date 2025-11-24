@@ -37,3 +37,9 @@ default:
 [no-cd]
 @db_init:
     uv run reflex db init
+
+# Reflex make migration db and migrate
+[no-cd]
+dbmakeall:
+    uv run reflex db makemigrations
+    uv run reflex db migrate

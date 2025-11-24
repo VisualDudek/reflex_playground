@@ -4,7 +4,7 @@ from ..ui.base_layout import base_layout
 from ..navigation import routes
 
 
-class ContactEntryModel(rx.Model):
+class ContactEntryModel(rx.Model, table=True):
     first_name: str
     last_name: str
     email: str
