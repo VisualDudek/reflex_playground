@@ -1,18 +1,21 @@
 # reflex_playground
 Learn reflex framework, build web app using pure Python.
 
-> **Note:** All markdown files in this workspace are concatenated in [READMEALL.md](READMEALL.md)
-
 - try to use Claude CLI + VS Code extension
 
 ## Quick Start
 See [GUIDE.md](GUIDE.md) for detailed tutorial.
 
-This project uses [just](https://github.com/casey/just) for task automation.
+This project uses [just](https://github.com/casey/just) for task automation. Just hit `just --list`.
 
-Common commands:
-- `just run` - Run the development server with hot reaload
-- `just init` - Initialize a new Reflex app under current dir
+My Reflex docs:
+- [ quick ref ](./reflex-docs/reflex-quick-ref.md)
+- [ concepts ](./reflex-docs/reflex-concepts.md)
+- [ journal ](./reflex-docs/reflex-journal.md)
+- [ examples ](./reflex-docs/reflex-examples.md)
+- [ troubleshooting ](./reflex-docs/reflex-troubleshooting.md)
+- [ project notes ](./reflex-docs/reflex-project-notes.md)
+
 
 # src
 [YT Build Full Stack Web Apps in Pure Python with Reflex](https://youtu.be/ITOZkzjtjUA?si=L1_LLilP5YhxL2VU)
