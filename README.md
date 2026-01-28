@@ -1,9 +1,9 @@
-# reflex_playground
+# Reflex playground
+
 Learn reflex framework, build web app using pure Python.
 
-- try to use Claude CLI + VS Code extension
-
 ## Quick Start
+
 See [GUIDE.md](GUIDE.md) for detailed tutorial.
 
 This project uses [just](https://github.com/casey/just) for task automation. Just hit `just --list`.
@@ -16,11 +16,12 @@ My Reflex docs:
 - [ troubleshooting ](./reflex-docs/reflex-troubleshooting.md)
 - [ project notes ](./reflex-docs/reflex-project-notes.md)
 
-
 # src
+
 [YT Build Full Stack Web Apps in Pure Python with Reflex](https://youtu.be/ITOZkzjtjUA?si=L1_LLilP5YhxL2VU)
 
 # Reflex dependencies
+
 ```
 reflex v0.8.20
 ├── alembic v1.17.2
@@ -44,12 +45,14 @@ watchfiles v1.1.1
 ```
 
 # Future plans
+
 - Enhance the `find_markdown.py` script with concat all md files. DONE
 - Use Markdown comment syntax `<!-- TAG: TAKEAWAY --->` for takaway points
 - ^^^ follow up, script that walk all .md files and gather TAKEAWAY tags
 - run `concat_markdown` script in pre/post commit hook 
 
 ## Debug
+
 For `rx.page()` decorator, there is this key line:
 ```python
         DECORATED_PAGES[get_config().app_name].append((render_fn, kwargs))
@@ -59,6 +62,7 @@ how to debug this dict DECORATED_PAGES?
 ## Python Tips
 
 ### Modifying Lists During `os.walk()` Traversal
+
 When using `os.walk()`, the `dirnames` list can be modified in-place to control which directories are visited:
 
 ```python
@@ -73,13 +77,15 @@ for dirpath, dirnames, filenames in os.walk(root):
 The slice assignment `[:]` modifies the **same list object** that `os.walk()` references, allowing you to prune entire directory trees during traversal. This is much more efficient than traversing everything and filtering later.
 
 # gotchas
-- The app directory name must start wiht a letter and can contain letters, numbers, and underscores.
+
+- The app directory name must start with a letter and can contain letters, numbers, and underscores.
 - `reflex init --template reflex-chat` 
     - No template know for version 0.8.20
     - Please use `reflex login` to access the `reflex-chat' template
 - `ImportError: cannot import name 'State' from partially initialized module 'part_006.part_006' (most likely due to a circular import)`
 
 # Takeaway
+
 vim-mode when using fold on code block: Use `gj` and `gk` instead of `j` and `k`
 They move visually, not logically — this does not enter folds, so they stay closed.
 
