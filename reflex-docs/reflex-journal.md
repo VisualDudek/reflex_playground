@@ -52,3 +52,4 @@ Links:
 - (none yet)
 
 ### Next Session
+- YT start from 20:00 Dynamic Content
