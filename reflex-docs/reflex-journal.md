@@ -28,3 +28,20 @@ Links:
 - Quick ref → `./reflex-quick-ref.md`
 - Examples → `./reflex-examples.md#hello-world`
 - Concepts → `./reflex-concepts.md#foundations`
+
+## 2026-01-30 — Session 2
+**Focus:** recap
+
+### What I did
+- recap [start here app](../start_here/)
+
+### Questions
+- why rx module expose Container.create classmethod in such way `container = Container.create`?
+
+### What I learned
+- `rxconfig.py` defines app name (implicit app dir) and plugins such as `tailwind` and `Sitemap`
+
+### Friction / Errors
+- (none yet)
+
+### Next Session
