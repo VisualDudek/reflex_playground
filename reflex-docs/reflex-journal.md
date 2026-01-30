@@ -34,12 +34,19 @@ Links:
 
 ### What I did
 - recap [start here app](../start_here/)
+- dig into how components are created and exposed in `rx` module
 
 ### Questions
 - why rx module expose Container.create classmethod in such way `container = Container.create`?
 
 ### What I learned
 - `rxconfig.py` defines app name (implicit app dir) and plugins such as `tailwind` and `Sitemap`
+- [CONCEPT:Prop] Props modify the behavior and appearance of components. They are passed in as keyword arguments to a component.
+- [COMPONENT/STYLE] page dark mode toggle button is Component `rx.color_mode.button(position="top-right")`
+- [COMPONENT/EVENT] both `rx.button` and `rx.text` support `on_click` prop that takes an Event handler (usually a State method) type: `EventType`.
+- [COMPONENT] `rx.text`, `rx.button`, `rx.link`
+- [COMPONENT:LAYOUT] `rx.vstack`, `rx.hstack`, `rx.box`
+- [STATE] class that inherits from `rx.State` holds app state **variables** as class attributes and event handler methods that mutate those variables.
 
 ### Friction / Errors
 - (none yet)
