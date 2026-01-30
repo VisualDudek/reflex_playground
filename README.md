@@ -18,7 +18,8 @@ My Reflex docs:
 
 # src
 
-[YT Build Full Stack Web Apps in Pure Python with Reflex](https://youtu.be/ITOZkzjtjUA?si=L1_LLilP5YhxL2VU)
+- [YT Build Full Stack Web Apps in Pure Python with Reflex](https://youtu.be/ITOZkzjtjUA?si=L1_LLilP5YhxL2VU)
+- [ Reflex Official Docs](https://reflex.dev/docs/getting-started/introduction/)
 
 # Reflex dependencies
 
