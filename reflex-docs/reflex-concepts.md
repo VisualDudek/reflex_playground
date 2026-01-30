@@ -21,6 +21,12 @@ See: `./reflex-examples.md#hello-world`
 
 - UI is a nested tree of `rx.*` components
 - Layout is explicit (e.g. `rx.vstack`, `rx.hstack`)
+- Different types of components such as Layout, Forms, Data Display [see here](https://reflex.dev/docs/library/)
+
+### Props
+[CORE]
+- Modify component behavior/appearance [See: Styling section below](#styling)
+- Passed as keyword args (e.g. `rx.button("Click me", color="red")`)
 
 ## State & Events
 ### State (`rx.State`)
