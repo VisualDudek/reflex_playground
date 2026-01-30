@@ -10,6 +10,11 @@ class State(rx.State):
     """The app state."""
     label: str = "Hello, Reflex!"
     _label_cycle = cycle(["Hello, Reflex!", "You clicked the button!"])
+    counter : int = 0
+
+    def inc(self):
+        """Increment the counter."""
+        self.counter += 1
 
     def change_label(self):
         """Change the label."""
@@ -26,6 +31,7 @@ def index() -> rx.Component:
         rx.color_mode.button(position="top-right"),
         rx.vstack(
             rx.heading("Welcome to Reflex!", size="9"),
+            rx.heading(State.counter, size="7", on_click=State.inc), 
             rx.heading(State.label, size="9"),
             rx.text(
                 "Get started by editing ",
